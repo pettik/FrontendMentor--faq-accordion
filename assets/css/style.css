@@ -9,20 +9,60 @@
 }
 
 :root {
-  --white: hsl(0, 0%, 100%);
-  --grey: hsl(0, 0%, 50%);
-  --black: hsl(0, 0%, 7%);
-  --yellow: hsl(47, 88%, 63%);
+  /*========== Colors ==========*/
+  --purple: #9a42c1;
+  --light-purple: #f9f4fa;
+  --dark-purple: #341635;
+  --white: #fff;
+  --light-gray: #9d949f;
+  --dark-gray: #7c7c7c; 
 }
 
-body {
-  font-size: 16px;
 
+/*=============== BASE ===============*/
+body {
   font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
   font-optical-sizing: auto;
   font-style: normal;
+  background-color: var(--light-purple);;
 }
 
+a {
+  text-decoration: none;
+}
+
+
+/*=============== MAIN ===============*/
+
+header{
+  display: block;
+  width: 100%;
+  height: 30vh;
+  background-color: var(--dark-purple);
+  background-image: url('./../images/background-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  background: var(--white);
+  width: 80%;
+  margin: -10vh auto;
+  padding:1rem;
+  border-radius: 1rem;
+}
+
+
+/*=============== TITLE ===============*/
+.title-wrapper{
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+
+/*=============== FOOTER ===============*/
 .attribution {
   display: none;
 }
