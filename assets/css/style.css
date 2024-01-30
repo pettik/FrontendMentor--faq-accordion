@@ -179,7 +179,6 @@ header {
 	.container {
 		width: 85%;
 		max-width: 600px;
-		;
 		margin: -9rem auto;
 		padding: 87px 4.6rem 0 3.25rem;
 	}
@@ -240,6 +239,38 @@ header {
 		left: 50%;
 		top: 0;
 		transform: translateX(-50%);
+	}
+
+	header {
+		height: 42vh;
+	}
+
+	.container {
+		width: 85%;
+		max-width: 600px;
+		margin: -10.5rem auto;
+		padding: 46px 2.5rem 0 2.5rem;
+	}
+
+	.title-wrapper .title-icon img {
+		width: 42px;
+	}
+
+	.title-wrapper h1 {
+		font-size: 56px;
+		margin-top: -9px;
+	}
+
+	.questions {
+		margin-top: 2.5rem;
+	}
+
+	.answer-content{
+		margin-top: 1.25rem;
+	}
+
+	.answer{
+		line-height: 1.4;
 	}
 
 
