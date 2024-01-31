@@ -31,34 +31,10 @@ body {
 	font-optical-sizing: auto;
 	font-style: normal;
 	background-color: var(--background-purple);
-
-	position: relative;
-	/* temporary property */
 }
 
 a {
 	text-decoration: none;
-}
-
-body>*:not(.template) {
-	/* opacity: .5; */
-}
-
-/*=============== TEMPORARY TEMPLATE ===============*/
-.template {
-	display: block;
-	display:none;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100%;
-	height: 669px;
-	max-width: 327px;
-	background: grey;
-	background: url('../../design/mobile-design_template.png');
-	background-repeat: no-repeat;
-	z-index: -2;
-
 }
 
 /*=============== MAIN ===============*/
@@ -105,8 +81,6 @@ header {
 	cursor: pointer;
 }
 
-
-
 .first-row h3 {
 	width: 80%;
 	font-weight: 600;
@@ -127,8 +101,7 @@ header {
 	align-items: center;
 }
 
-
-/* figure */
+/* accordion */
 .accordion {
 	border-bottom: 2px solid var(--light-gray);
 }
@@ -155,7 +128,6 @@ header {
 	font-weight: 600;
 	color: var(--purple-text);
 	height: 0;
-
 }
 
 
@@ -168,20 +140,6 @@ header {
 /*=============== MEDIA QUERIES ===============*/
 /* DESKTOP SCREEN */
 @media screen and (min-width: 768px) {
-
-	.template {
-		background: url('../../design/desktop-design_template.png');
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 100vw;
-		max-width: 600px;
-		height: 732px;
-		left: 50%;
-		top: 0;
-		transform: translateX(-50%);
-	}
-
-
 	header {
 		height: 42vh;
 		background-image: url('./../images/background-pattern-desktop.svg');
