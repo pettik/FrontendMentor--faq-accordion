@@ -41,13 +41,13 @@ a {
 }
 
 body>*:not(.template) {
-	opacity: .5;
+	/* opacity: .5; */
 }
 
 /*=============== TEMPORARY TEMPLATE ===============*/
 .template {
 	display: block;
-	/* display:none; */
+	display:none;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -101,9 +101,10 @@ header {
 .first-row {
 	display: flex;
 	margin-top: 22px;
-
 	cursor: pointer;
 }
+
+
 
 .first-row h3 {
 	width: 80%;
@@ -111,6 +112,11 @@ header {
 	font-size: 17px;
 	color: var(--heading-purple);
 	letter-spacing: -.5px;
+	transition: color .3s;
+}
+
+.first-row:hover h3{
+	color: var(--purple);
 }
 
 .icon {
@@ -126,7 +132,7 @@ header {
 	border-bottom: 2px solid var(--light-gray);
 }
 
-.accordion:last-child {
+.accordion:last-child{
 	border-bottom: none;
 }
 
