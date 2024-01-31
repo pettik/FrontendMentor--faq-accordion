@@ -1,5 +1,15 @@
 const firstRows = document.querySelectorAll('.first-row');
 
+
+
+function init(){
+   const firstAccordion = document.querySelector('#first-accordion');
+   firstAccordion.classList.add('open'); 
+   firstAccordion.querySelector('.icon img').src='assets/images/icon-minus.svg';
+}
+
+
+
 // Iterate through each "first-row" element
 firstRows.forEach(row => {
    // Add a click event listener to each "first-row" element
@@ -8,6 +18,8 @@ firstRows.forEach(row => {
       const accordion = row.closest('.accordion');
       accordion.classList.toggle('open');
 
+      
+
       // Toggle the source of the icon image
       const icon = row.querySelector('.icon img');
       if (accordion.classList.contains('open')) {
@@ -15,5 +27,8 @@ firstRows.forEach(row => {
       } else {
          icon.src = 'assets/images/icon-plus.svg';
       }
+
    });
 });
+
+init();
