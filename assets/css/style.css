@@ -13,14 +13,15 @@
 	--purple: #9a42c1;
 	--light-purple: #f9f4fa;
 	--dark-purple: #341635;
+	--title-color: #2c192f;
 	--white: #fff;
 	--light-gray: #9d949f;
 	--dark-gray: #7c7c7c;
-	--line-gray: hsla(0, 0%, 85%, .92);
-	--background-purple: rgb(245,232,252);
-	--heading-purple: hsla(298, 41%, 15%, 0.83);
-	--heading-active: hsl(298, 41%, 15%);
-	--purple-text: hsla(282, 81%, 22%, 0.66);
+	--line-gray: #d9d9d9eb;
+	--background-purple: #f5e8fc;
+	--heading-purple: #351736d4;
+	--heading-active: #351736;
+	--purple-text: #4a0b66a8;
 }
 
 
@@ -42,7 +43,7 @@ header {
 	display: block;
 	width: 100%;
 	height: 25vh;
-	max-height: 320px;
+	max-height: 20rem;
 	background-color: var(--dark-purple);
 	background-image: url('./../images/background-pattern-mobile.svg');
 	background-repeat: no-repeat;
@@ -53,38 +54,39 @@ header {
 	background: var(--white);
 	width: 87%;
 	margin: -8.5vh auto;
-	padding: 25px 1.5rem;
-	border-radius: 12px;
-	box-shadow: 0 20px 40px hsla(282, 81%, 22%, 0.1);
+	padding: 1.56rem 1.5rem;
+	border-radius: .75rem;
+	box-shadow: 0 1.25rem 2.5rem hsla(282, 81%, 22%, 0.1);
 }
 
 
 /*=============== TITLE ===============*/
 .title-wrapper {
 	display: flex;
-	column-gap: 22px;
+	column-gap: 1.375rem;
 	align-items: center;
 }
 
 .title-wrapper h1 {
-	font-size: 32px;
+	font-size: 2rem;
 	letter-spacing: -.24px;
+	color:var(--title-color);
 }
 
 .title-wrapper .title-icon img {
-	width: 25px;
+	width: 1.56rem;
 }
 
 .first-row {
 	display: flex;
-	margin-top: 22px;
+	margin-top: 1.375rem;
 	cursor: pointer;
 }
 
 .first-row h3 {
 	width: 80%;
 	font-weight: 600;
-	font-size: 17px;
+	font-size: 1.06rem;
 	color: var(--heading-purple);
 	letter-spacing: -.5px;
 	transition: color .2s;
@@ -103,7 +105,7 @@ header {
 
 /* accordion */
 .accordion {
-	border-bottom: 2px solid var(--light-gray);
+	border-bottom: 0.125rem solid var(--light-gray);
 }
 
 .accordion:last-child{
@@ -123,7 +125,7 @@ header {
 .answer {
 	display: none;
 	padding-bottom: 1rem;
-	font-size: 14px;
+	font-size: 0.875rem;
 	line-height: 1.5;
 	font-weight: 600;
 	color: var(--purple-text);
@@ -147,22 +149,21 @@ header {
 
 	.container {
 		width: 85%;
-		max-width: 600px;
+		max-width: 37.5rem;
 		margin: -9.5rem auto;
-		padding: 46px 2.5rem 2.5rem 2.5rem;
+		padding: 2.875rem 2.5rem 2.5rem 2.5rem;
 	}
 
 	.title-wrapper {
-		column-gap: 20px;
+		column-gap: 1.25rem;
 	}
 
 	.title-wrapper h1 {
-		font-size: 56px;
-		margin-top: -9px;
+		font-size: 3.75rem;
 	}
 
 	.title-wrapper .title-icon img {
-		width: 42px;
+		width: 2.625rem;
 	}
 
 	.questions {
@@ -170,7 +171,7 @@ header {
 	}
 
 	.first-row {
-		margin-top: 20px;
+		margin-top: 1.25rem;;
 	}
 
 	.first-row h3 {
@@ -188,7 +189,7 @@ header {
 	}
 
 	.answer {
-		font-size: 16px;
+		font-size: 1rem;
 		line-height: 1.4;
 		font-weight: 400;
 		padding-bottom: 1.5rem;
