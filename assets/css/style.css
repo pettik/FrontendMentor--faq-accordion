@@ -47,6 +47,7 @@ body>*:not(.template) {
 /*=============== TEMPORARY TEMPLATE ===============*/
 .template {
 	display: block;
+	/* display:none; */
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -75,7 +76,7 @@ header {
 .container {
 	background: var(--light-purple);
 	width: 87%;
-	margin: -9.5vh auto;
+	margin: -8.5vh auto;
 	padding: 25px 1.5rem;
 	border-radius: 12px;
 }
@@ -122,9 +123,11 @@ header {
 
 /* figure */
 .accordion {
-
-
 	border-bottom: 2px solid var(--light-gray);
+}
+
+.accordion:last-child {
+	border-bottom: none;
 }
 
 .accordion.open .answer {
@@ -156,79 +159,9 @@ header {
 
 
 /*=============== MEDIA QUERIES ===============*/
-/* TABLET SCREEN */
+/* DESKTOP SCREEN */
 @media screen and (min-width: 768px) {
 
-	.template {
-		background: url('../../design/tablet-design_template_768-644.png');
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 100vw;
-		max-width: 768px;
-		height: 969px;
-		left: 0;
-		top: 0;
-		transform: none;
-		transform: translateX(-20px);
-	}
-
-	header {
-		height: 33vh;
-	}
-
-	.container {
-		width: 85%;
-		max-width: 600px;
-		margin: -9rem auto;
-		padding: 87px 4.6rem 0 3.25rem;
-	}
-
-	.title-wrapper {
-		column-gap: 20px;
-	}
-
-	.title-wrapper h1 {
-		font-size: 47px;
-		margin-top: -9px;
-	}
-
-	.title-wrapper .title-icon img {
-		width: 70px;
-	}
-
-	.questions {
-		margin-top: 4.4rem;
-	}
-
-	.first-row {
-		margin-top: 20px;
-	}
-
-	.first-row h3 {
-		letter-spacing: .05px;
-		width: 90%;
-	}
-
-	.icon {
-		width: 10%;
-	}
-
-	.answer-content {
-		margin-top: 1.7rem;
-		text-align: justify;
-	}
-
-	.answer {
-		font-size: 16px;
-		line-height: 1.3;
-		font-weight: 400;
-		padding-bottom: 1.5rem;
-	}
-
-}
-
-/* DESKTOP SCREEN */
-@media screen and (min-width: 1440px) {
 	.template {
 		background: url('../../design/desktop-design_template.png');
 		background-repeat: no-repeat;
@@ -248,12 +181,12 @@ header {
 	.container {
 		width: 85%;
 		max-width: 600px;
-		margin: -10.5rem auto;
-		padding: 46px 2.5rem 0 2.5rem;
+		margin: -9.5rem auto;
+		padding: 46px 2.5rem 2.5rem 2.5rem;
 	}
 
-	.title-wrapper .title-icon img {
-		width: 42px;
+	.title-wrapper {
+		column-gap: 20px;
 	}
 
 	.title-wrapper h1 {
@@ -261,17 +194,37 @@ header {
 		margin-top: -9px;
 	}
 
+	.title-wrapper .title-icon img {
+		width: 42px;
+	}
+
 	.questions {
 		margin-top: 2.5rem;
 	}
 
-	.answer-content{
+	.first-row {
+		margin-top: 20px;
+	}
+
+	.first-row h3 {
+		letter-spacing: .05px;
+		width: 90%;
+	}
+
+	.icon {
+		width: 10%;
+	}
+
+	.answer-content {
 		margin-top: 1.25rem;
+		text-align: justify;
 	}
 
-	.answer{
+	.answer {
+		font-size: 16px;
 		line-height: 1.4;
+		font-weight: 400;
+		padding-bottom: 1.5rem;
 	}
-
 
 }
