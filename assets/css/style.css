@@ -17,7 +17,7 @@
 	--light-gray: #9d949f;
 	--dark-gray: #7c7c7c;
 	--line-gray: hsla(0, 0%, 85%, .92);
-	--background-purple: #ebbeff;
+	--background-purple: rgb(245,232,252);
 	--heading-purple: hsla(298, 41%, 15%, 0.83);
 	--heading-active: hsl(298, 41%, 15%);
 	--purple-text: hsla(282, 81%, 22%, 0.66);
@@ -74,11 +74,12 @@ header {
 }
 
 .container {
-	background: var(--light-purple);
+	background: var(--white);
 	width: 87%;
 	margin: -8.5vh auto;
 	padding: 25px 1.5rem;
 	border-radius: 12px;
+	box-shadow: 0 20px 40px hsla(282, 81%, 22%, 0.1);
 }
 
 
@@ -112,7 +113,7 @@ header {
 	font-size: 17px;
 	color: var(--heading-purple);
 	letter-spacing: -.5px;
-	transition: color .3s;
+	transition: color .2s;
 }
 
 .first-row:hover h3{
@@ -180,8 +181,10 @@ header {
 		transform: translateX(-50%);
 	}
 
+
 	header {
 		height: 42vh;
+		background-image: url('./../images/background-pattern-desktop.svg');
 	}
 
 	.container {
