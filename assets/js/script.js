@@ -1,28 +1,21 @@
-const firstRows = document.querySelectorAll('.first-row');
+const accordionButtons = document.querySelectorAll(".accordion-toggle");
 
-function init() {
-  const firstAccordion = document.querySelector('#first-accordion');
-  firstAccordion.classList.add('open');
-  firstAccordion.querySelector('.icon img').src =
-    'assets/images/icon-minus.svg';
-}
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const accordion = button.closest(".accordion");
+    const panel = document.querySelector(
+      `#${button.getAttribute("aria-controls")}`,
+    );
+    const icon = button.querySelector(".icon");
 
-// Iterate through each "first-row" element
-firstRows.forEach(row => {
-  // Add a click event listener to each "first-row" element
-  row.addEventListener('click', () => {
-    // Toggle the class "open" on the parent ".accordion" element
-    const accordion = row.closest('.accordion');
-    accordion.classList.toggle('open');
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-    // Toggle the source of the icon image
-    const icon = row.querySelector('.icon img');
-    if (accordion.classList.contains('open')) {
-      icon.src = 'assets/images/icon-minus.svg';
-    } else {
-      icon.src = 'assets/images/icon-plus.svg';
-    }
+    button.setAttribute("aria-expanded", String(!isExpanded));
+    accordion.classList.toggle("open", !isExpanded);
+    panel.hidden = isExpanded;
+
+    icon.src = isExpanded
+      ? "assets/images/icon-plus.svg"
+      : "assets/images/icon-minus.svg";
   });
 });
-
-init();
