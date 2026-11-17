@@ -22,12 +22,13 @@
   --heading-purple: #351736d4;
   --heading-active: #351736;
   --purple-text: #4a0b66a8;
+  --card-shadow: 0 1.25rem 2.5rem hsla(282, 81%, 22%, 0.1);
 }
 
 /*=============== BASE ===============*/
 body {
   font-family: "Work Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-optical-sizing: auto;
   font-style: normal;
   background-color: var(--background-purple);
@@ -40,9 +41,8 @@ a {
 /*=============== MAIN ===============*/
 .hero-bg {
   display: block;
-  width: 100%;
-  height: 25vh;
-  max-height: 20rem;
+  inline-size: 100%;
+  block-size: min(25vh, 20rem);
   background-color: var(--dark-purple);
   background-image: url("./../images/background-pattern-mobile.svg");
   background-repeat: no-repeat;
@@ -51,11 +51,12 @@ a {
 
 .container {
   background: var(--white);
-  width: 87%;
-  margin: -8.5vh auto;
+  inline-size: 87%;
+  margin-block: -8.5vh;
+  margin-inline: auto;
   padding: 1.56rem 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 1.25rem 2.5rem hsla(282, 81%, 22%, 0.1);
+  box-shadow: var(--card-shadow);
 }
 
 /*=============== TITLE ===============*/
@@ -67,99 +68,80 @@ a {
 
 .title-wrapper h1 {
   font-size: 2rem;
-  letter-spacing: -0.24px;
+  letter-spacing: -0.015rem;
   color: var(--title-color);
 }
 
-.title-wrapper .title-icon img {
-  width: 1.56rem;
+.title-icon img {
+  inline-size: 1.56rem;
+}
+
+/*=============== ACCORDION ===============*/
+.questions {
+  list-style: none;
+}
+
+.accordion {
+  border-block-end: 0.125rem solid var(--line-gray);
+}
+
+.icon {
+  inline-size: 1.875rem;
+  block-size: 1.875rem;
+  flex-shrink: 0;
 }
 
 .accordion-toggle {
-  width: 100%;
+  inline-size: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1.375rem;
+  margin-block-start: 1.375rem;
   border: 0;
   background: transparent;
   cursor: pointer;
-  text-align: left;
+  text-align: start;
   font: inherit;
 }
 
 .accordion-toggle span {
-  width: 80%;
+  inline-size: 80%;
   font-weight: 600;
   font-size: 1.06rem;
   color: var(--heading-purple);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.03125rem;
   transition: color 0.2s;
 }
 
-.accordion-toggle:hover span,
-.accordion-toggle:focus-visible span {
-  color: var(--purple);
-}
-
-.accordion-toggle:focus-visible {
-  outline: 2px solid var(--purple);
-  outline-offset: 4px;
-  border-radius: 0.25rem;
-}
-
-.accordion-toggle .icon {
-  width: 1.875rem;
-  height: 1.875rem;
-}
-.icon {
-  width: 20%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-/* accordion */
-.accordion {
-  border-bottom: 0.125rem solid var(--line-gray);
-}
-
-.accordion:last-child {
-  border-bottom: none;
-}
-
-.accordion.open .answer {
-  height: 100%;
-  display: block;
-}
-
 .answer-content {
-  margin-top: 1.25rem;
-  overflow: hidden;
+  margin-block-start: 1.25rem;
 }
-.questions {
-  list-style: none;
-}
-/* .answer {
-  display: none;
-  padding-bottom: 1rem;
+
+.answer {
+  padding-block-end: 1rem;
   font-size: 0.875rem;
   line-height: 1.5;
   font-weight: 600;
   color: var(--purple-text);
-  height: 0;
-} */
+}
+
+.accordion:last-child {
+  border-block-end: none;
+}
 
 .answer-content[hidden] {
   display: none;
 }
 
-.answer {
-  padding-bottom: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  font-weight: 600;
-  color: var(--purple-text);
+.accordion-toggle:focus-visible {
+  outline: 0.125rem solid var(--purple);
+  outline-offset: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.accordion-toggle:hover span,
+.accordion-toggle:focus-visible span {
+  color: var(--purple);
 }
 
 /*=============== FOOTER ===============*/
@@ -169,17 +151,17 @@ a {
 
 /*=============== MEDIA QUERIES ===============*/
 /* DESKTOP SCREEN */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .hero-bg {
-    height: 42vh;
+    block-size: min(42vh, 20rem);
     background-image: url("./../images/background-pattern-desktop.svg");
   }
 
   .container {
-    width: 85%;
-    max-width: 37.5rem;
-    margin: -9.5rem auto;
-    padding: 2.875rem 2.5rem 2.5rem 2.5rem;
+    inline-size: min(85%, 37.5rem);
+    margin-block: -9.5rem;
+    padding-block: 2.875rem 2.5rem;
+    padding-inline: 2.5rem;
   }
 
   .title-wrapper {
@@ -190,20 +172,15 @@ a {
     font-size: 3.75rem;
   }
 
-  .title-wrapper .title-icon img {
-    width: 2.625rem;
+  .title-icon img {
+    inline-size: 2.625rem;
   }
 
   .questions {
-    margin-top: 2.5rem;
-  }
-
-  .icon {
-    width: 10%;
+    margin-block-start: 2.5rem;
   }
 
   .answer-content {
-    margin-top: 1.25rem;
     text-align: justify;
   }
 
@@ -211,6 +188,12 @@ a {
     font-size: 1rem;
     line-height: 1.4;
     font-weight: 400;
-    padding-bottom: 1.5rem;
+    padding-block-end: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-toggle span {
+    transition: none;
   }
 }

@@ -1,6 +1,7 @@
 const accordionButtons = document.querySelectorAll(".accordion-toggle");
 
 accordionButtons.forEach((button) => {
+  // Native buttons also trigger click when activated with Enter or Space.
   button.addEventListener("click", () => {
     const accordion = button.closest(".accordion");
 
@@ -21,12 +22,11 @@ accordionButtons.forEach((button) => {
     }
 
     const icon = button.querySelector(".icon");
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-    const nextExpanded = !isExpanded;
+    const nextExpanded = panel.hidden;
 
-    button.setAttribute("aria-expanded", String(nextExpanded));
-    accordion.classList.toggle("open", nextExpanded);
     panel.hidden = !nextExpanded;
+    panel.setAttribute("aria-hidden", String(!nextExpanded));
+    button.setAttribute("aria-expanded", String(nextExpanded));
 
     if (icon) {
       icon.src = nextExpanded
